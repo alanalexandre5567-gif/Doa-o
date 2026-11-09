@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Esperança Viva – Doe para crianças na África</title>
+<style>
+:root{--bg:#fffaf3;--surface:#fff;--text:#2a1f17;--muted:#6b5d52;--accent:#d9561f;--accent2:#f2a33a;--border:#ead9c6;--ok:#2e7d4f;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1a1410;--surface:#261d17;--text:#f6ece0;--muted:#b9a894;--accent:#f0723a;--accent2:#f2a33a;--border:#43342a;--ok:#5fc08a}}
+:root[data-theme="dark"]{--bg:#1a1410;--surface:#261d17;--text:#f6ece0;--muted:#b9a894;--accent:#f0723a;--accent2:#f2a33a;--border:#43342a;--ok:#5fc08a}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Georgia,"Times New Roman",serif;line-height:1.55}
+h1,h2,h3,button,label,.sans{font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+.wrap{max-width:880px;margin:0 auto;padding:0 20px}
+header{padding:18px 0;display:flex;justify-content:space-between;align-items:center}
+.logo{font-weight:700;font-size:1.1rem}.logo span{color:var(--accent)}
+.hero{padding:36px 0 28px;text-align:center}
+.hero h1{font-size:clamp(1.9rem,6vw,3rem);line-height:1.15;margin:0 0 14px}
+.hero p{font-size:1.1rem;color:var(--muted);max-width:560px;margin:0 auto 22px}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;padding:14px 28px;border-radius:999px;font-weight:600;font-family:system-ui,sans-serif}
+.sun{width:96px;height:96px;margin:0 auto 14px;display:block}
+section{padding:28px 0}
+h2{font-size:1.6rem;margin:0 0 14px}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:18px}
+.card .ic{font-size:1.8rem}
+.card h3{margin:6px 0 4px;font-size:1.05rem}
+.card p{margin:0;color:var(--muted);font-size:.95rem}
+#doar{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:24px;margin:8px 0 28px}
+.toggle,.amounts{display:grid;gap:10px}
+.toggle{grid-template-columns:1fr 1fr;margin-bottom:16px}
+.amounts{grid-template-columns:repeat(auto-fit,minmax(90px,1fr));margin-bottom:14px}
+button.opt{background:var(--bg);color:var(--text);border:2px solid var(--border);border-radius:12px;padding:14px 8px;font-size:1.1rem;font-weight:700;cursor:pointer}
+button.opt[aria-pressed="true"]{border-color:var(--accent);background:var(--accent);color:#fff}
+.impact{background:var(--bg);border-left:4px solid var(--accent2);padding:12px 14px;border-radius:8px;margin:14px 0;min-height:3.2em}
+label{display:block;font-weight:600;margin:12px 0 4px;font-size:.95rem}
+input[type=text],input[type=email],input[type=number]{width:100%;padding:12px;border-radius:10px;border:1px solid var(--border);background:var(--bg);color:var(--text);font-size:1rem}
+.submit{width:100%;margin-top:18px;background:var(--accent);color:#fff;border:0;border-radius:999px;padding:16px;font-size:1.1rem;font-weight:700;cursor:pointer}
+.msg{display:none;text-align:center;padding:12px 0}
+.msg h3{color:var(--ok);font-size:1.5rem;margin:0 0 8px}
+.err{color:#c0392b;font-size:.9rem;min-height:1.2em;margin-top:8px}
+.note{font-size:.85rem;color:var(--muted);text-align:center;margin-top:12px}
+.meter{max-width:460px;margin:26px auto 0;text-align:left;font-family:system-ui,sans-serif}.meter .top{display:flex;justify-content:space-between;font-weight:700;margin-bottom:6px;flex-wrap:wrap;gap:4px}.bar{height:14px;background:var(--border);border-radius:999px;overflow:hidden}.fill{height:100%;width:0;background:linear-gradient(90deg,var(--accent2),var(--accent));border-radius:999px;transition:width .8s ease}.meter .sub{font-size:.85rem;color:var(--muted);margin-top:6px}.pixbox{background:var(--bg);border:1px dashed var(--accent);border-radius:12px;padding:14px;margin:14px 0;word-break:break-all;font-family:system-ui,sans-serif}.pixbox b{display:block;margin-bottom:6px}.pixbox button{margin-top:10px}.ph{margin:0}.ph img{width:100%;height:220px;object-fit:cover;border-radius:16px;display:block}.toasts{position:fixed;left:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;gap:8px;z-index:20;pointer-events:none;max-width:calc(100% - 24px)}.toast{background:var(--surface);color:var(--text);border:1px solid var(--border);border-left:4px solid var(--ok);border-radius:12px;padding:10px 14px;font-family:system-ui,sans-serif;font-size:.9rem;box-shadow:0 6px 20px rgba(0,0,0,.18);animation:up .5s ease,out .5s ease 5s forwards}@keyframes up{from{transform:translateY(30px);opacity:0}to{transform:none;opacity:1}}@keyframes out{to{opacity:0;transform:translateY(-20px)}}footer{padding:24px 0 36px;text-align:center;color:var(--muted);font-size:.85rem;border-top:1px solid var(--border)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><div class="logo">Esperança <span>Viva</span></div><a class="cta sans" href="#doar" style="padding:9px 18px;font-size:.9rem">Doar</a></header>
+
+<div class="hero">
+<svg class="sun" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="22" fill="#f2a33a"/><g stroke="#d9561f" stroke-width="5" stroke-linecap="round"><path d="M50 10v10M50 80v10M10 50h10M80 50h10M22 22l7 7M71 71l7 7M78 22l-7 7M29 71l-7 7"/></g></svg>
+<h1>Toda criança merece um amanhã.</h1>
+<p>Sua doação ajuda crianças em comunidades africanas com alimentação, água limpa, saúde e acesso à escola.</p>
+<a class="cta" href="#doar">Quero ajudar agora</a>
+<div class="meter" id="meter" style="display:none"><div class="top"><span id="raised"></span><span id="goal"></span></div><div class="bar"><div class="fill" id="fill"></div></div><div class="sub" id="donors"></div></div>
+</div>
+
+<section>
+<h2>Para onde vai sua doação</h2>
+<div class="grid">
+<div class="card"><div class="ic">🍲</div><h3>Alimentação</h3><p>Refeições nutritivas para combater a fome infantil.</p></div>
+<div class="card"><div class="ic">💧</div><h3>Água limpa</h3><p>Acesso seguro à água potável nas comunidades.</p></div>
+<div class="card"><div class="ic">🩺</div><h3>Saúde</h3><p>Vacinas, medicamentos e atendimento básico.</p></div>
+<div class="card"><div class="ic">📚</div><h3>Educação</h3><p>Material escolar e apoio para frequentar a escola.</p></div>
+</div>
+</section>
+
+<section id="galeria"><h2>Quem você ajuda</h2><div class="grid" id="fotos">
+<figure class="ph"><img src="fotos/foto1.jpg" alt="Crianças da comunidade atendida pela campanha" loading="lazy" onerror="this.parentNode.remove()"></figure>
+<figure class="ph"><img src="fotos/foto2.jpg" alt="Crianças da comunidade atendida pela campanha" loading="lazy" onerror="this.parentNode.remove()"></figure>
+<figure class="ph"><img src="fotos/foto3.jpg" alt="Crianças da comunidade atendida pela campanha" loading="lazy" onerror="this.parentNode.remove()"></figure>
+</div></section>
+
+<section id="doar">
+<div id="formBox" style="background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:24px">
+<h2>Faça sua doação</h2>
+<div class="toggle" role="group" aria-label="Frequência">
+<button class="opt" type="button" data-freq="unica" aria-pressed="true">Única vez</button>
+<button class="opt" type="button" data-freq="mensal" aria-pressed="false">Todo mês</button>
+</div>
+<div class="amounts" role="group" aria-label="Valor">
+<button class="opt" type="button" data-v="5" aria-pressed="false">R$ 5</button>
+<button class="opt" type="button" data-v="10" aria-pressed="true">R$ 10</button>
+<button class="opt" type="button" data-v="20" aria-pressed="false">R$ 20</button>
+<button class="opt" type="button" data-v="50" aria-pressed="false">R$ 50</button>
+<button class="opt" type="button" data-v="custom" aria-pressed="false">Outro</button>
+</div>
+<div id="customWrap" style="display:none"><label for="custom">Outro valor (R$)</label><input id="custom" type="number" min="1" step="1" inputmode="numeric" placeholder="Ex.: 35"></div>
+<div class="impact" id="impact" aria-live="polite"></div>
+<label for="nome">Seu nome</label><input id="nome" type="text" autocomplete="name">
+<label for="email">E-mail</label><input id="email" type="email" autocomplete="email">
+<div class="err" id="err"></div>
+<button class="submit" id="go" type="button">Doar R$ 10</button>
+<p class="note">Doações via Pix, direto para a chave da campanha.</p>
+</div>
+<div class="msg" id="thanks">
+<h3>Muito obrigado! 💛</h3>
+<p id="thanksTxt"></p>
+<div class="pixbox" id="pixbox" style="display:none"><b>Chave Pix (chave aleatória)</b><span id="pixkey"></span><br><button class="opt" type="button" id="copy" style="padding:10px 18px">Copiar chave</button></div>
+<button class="opt" type="button" id="again" style="padding:12px 22px">Fazer outra doação</button>
+</div>
+</section>
+</div>
+<div class="toasts" id="toasts" aria-live="polite"></div>
+<footer><div class="wrap">© 2026 Esperança Viva</div></footer>
+
+<script>
+(function(){
+var PIX_KEY='9ee08941-dd13-40ef-bf5f-181628d753c0';
+var state={v:10,freq:'unica',custom:false,pay:'pix'};
+var GOAL=10000,raised=0,donors=0;
+/* Doações com pagamento CONFIRMADO: {nome:'Maria',valor:20} */
+var CONFIRMADAS=[];
+var $=function(i){return document.getElementById(i)};
+function fmt(n){return 'R$ '+Number(n).toLocaleString('pt-BR')}
+function amount(){return state.custom?Math.floor(Number($('custom').value)||0):state.v}
+function impact(a){
+if(a<=0)return 'Escolha um valor para ver o impacto.';
+if(a<10)return '🍲 Ajuda a oferecer refeições para uma criança.';
+if(a<20)return '🍲💧 Ajuda com alimentação e água limpa para uma criança.';
+if(a<50)return '🍲💧📚 Ajuda com comida, água e material escolar.';
+return '🩺📚 Ajuda com saúde, educação e alimentação para uma família.';
+}
+function render(){
+var a=amount(),m=state.freq==='mensal';
+$('impact').textContent=impact(a)+(m&&a>0?' Todo mês, o efeito se multiplica.':'');
+$('go').textContent=a>0?('Doar '+fmt(a)+(m?' por mês':'')):'Doar';
+}
+document.querySelectorAll('[data-v]').forEach(function(b){b.addEventListener('click',function(){
+document.querySelectorAll('[data-v]').forEach(function(x){x.setAttribute('aria-pressed','false')});
+b.setAttribute('aria-pressed','true');
+state.custom=b.dataset.v==='custom';
+$('customWrap').style.display=state.custom?'block':'none';
+if(!state.custom)state.v=Number(b.dataset.v);else $('custom').focus();
+render();});});
+document.querySelectorAll('[data-freq]').forEach(function(b){b.addEventListener('click',function(){
+document.querySelectorAll('[data-freq]').forEach(function(x){x.setAttribute('aria-pressed','false')});
+b.setAttribute('aria-pressed','true');state.freq=b.dataset.freq;render();});});
+$('custom').addEventListener('input',render);
+function registrarDoacao(nome,valor){
+raised+=valor;donors+=1;meter();
+var t=document.createElement('div');t.className='toast';
+t.textContent='💛 '+nome+' doou '+fmt(valor);
+$('toasts').appendChild(t);
+setTimeout(function(){t.remove()},5600);
+}
+window.registrarDoacao=registrarDoacao;
+function meter(){
+$('meter').style.display=raised>0?'block':'none';
+var p=Math.min(100,raised/GOAL*100);
+$('raised').textContent=fmt(raised)+' arrecadados';
+$('goal').textContent='meta '+fmt(GOAL);
+$('donors').textContent=donors+' doadores · '+Math.round(p)+'% da meta';
+setTimeout(function(){$('fill').style.width=p+'%'},60);
+}
+document.querySelectorAll('[data-pay]').forEach(function(b){b.addEventListener('click',function(){
+document.querySelectorAll('[data-pay]').forEach(function(x){x.setAttribute('aria-pressed','false')});
+b.setAttribute('aria-pressed','true');state.pay=b.dataset.pay;});});
+$('copy').addEventListener('click',function(){
+try{navigator.clipboard.writeText(PIX_KEY);$('copy').textContent='Copiado ✓';}catch(e){$('copy').textContent='Copie manualmente';}
+});
+$('go').addEventListener('click',function(){
+var a=amount(),n=$('nome').value.trim(),e=$('email').value.trim();
+if(a<1){$('err').textContent='Informe um valor de pelo menos R$ 1.';return}
+if(!n){$('err').textContent='Informe seu nome.';return}
+if(!/^\S+@\S+\.\S+$/.test(e)){$('err').textContent='Informe um e-mail válido.';return}
+$('err').textContent='';
+$('thanksTxt').textContent=n.split(' ')[0]+', sua doação de '+fmt(a)+(state.freq==='mensal'?' mensal':'')+' fará uma grande diferença. Ela só aparece no contador depois que o pagamento for confirmado.';
+$('pixkey').textContent=PIX_KEY;$('copy').textContent='Copiar chave';
+$('pixbox').style.display=state.pay==='pix'?'block':'none';
+$('formBox').style.display='none';$('thanks').style.display='block';
+});
+$('again').addEventListener('click',function(){$('thanks').style.display='none';$('formBox').style.display='block';});
+CONFIRMADAS.forEach(function(d){raised+=d.valor;donors+=1});
+window.addEventListener('load',function(){if(!$('fotos').children.length)$('galeria').remove()});
+render();meter();
+})();
+</script>
+</body>
+</html>
